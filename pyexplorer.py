@@ -16,10 +16,6 @@ else:
 for drive in drives_slash: # cleaning for better reading
     drive = drive.replace("\\", '')
     drives.append(drive)
-def clear():
-    x += 1
-    while x != 100:
-        print()
 class FolderCompleter(Completer):
     def get_completions(self, document, complete_event):
         text = document.text.strip()
@@ -58,4 +54,5 @@ def ask_folder_path():
         validate=FolderValidator()
     ).ask()
     return answer
+
 
