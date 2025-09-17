@@ -5,8 +5,6 @@ import questionary, os, platform, psutil, time
 system = platform.system().lower()
 if system == 'windows':
     system = 'win'
-    import ctypes # Makes PyCLEAR title (don't work at linux)
-    ctypes.windll.kernel32.SetConsoleTitleW("PyCLEAR")
 username = os.getlogin()
 drives = []
 if system == 'win':
@@ -60,3 +58,4 @@ def ask_folder_path():
         validate=FolderValidator()
     ).ask()
     return answer
+
