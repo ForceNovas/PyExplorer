@@ -13,7 +13,7 @@ This library require __questionary__ and __psutil__, they can be installed by:
 pip install questionary psutil
 ```
 
-After that you can use library with command pyexplorer.ask_folder_path()
+After that you can use library with command __pyexplorer.ask_folder_path()__
 
 
 
