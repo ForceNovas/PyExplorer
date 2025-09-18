@@ -11,8 +11,11 @@ if system == 'win':
     partitions = psutil.disk_partitions() # Finds your disks
     drives_slash = [p.device for p in partitions] # List of disks
 else:
-    drives_slash = [d for d in os.listdir(f'/home/{username}')
-    if not d.startswith('.') and os.path.isdir(os.path.join(d))] # finds only non . directories
+    try:
+        drives_slash = [d for d in os.listdir(f'/home/{username}')
+        if not d.startswith('.') and os.path.isdir(os.path.join(d))] # finds only non . directories
+    except Exception:
+        print("Unable to find your core path.")
 for drive in drives_slash: # cleaning for better reading
     drive = drive.replace("\\", '')
     drives.append(drive)
